@@ -1,1 +1,155 @@
+@import url('https://fonts.googleapis.com/css?family=Nunito:300,400,700|Luckiest+Guy|Sanchez:400,400i&display=swap');
+
+$fontFamilySans: 'Nunito', sans-serif;
+$fontFamilySerif: 'Sanchez', serif;
+$fontFamilyDisplay: 'Luckiest Guy', cursive;
+
+@mixin boxSizing {
+  box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  -webkit-box-sizing: border-box;
+}
+
+body,
+h1,
+h2,
+ul,
+ul,
+li,
+p,
+a {
+  margin: 0px;
+  padding: 0px;
+  @include boxSizing;
+}
+* {
+  box-sizing: border-box;
+  font-family: $fontFamilySans;
+}
+
+h1.title{
+  font-family: $fontFamilyDisplay;
+}
+
+p{
+  font-family: $fontFamilySerif;
+}
+
+*:focus {
+  outline: none;
+}
+
+ul {
+  list-style: none;
+}
+
+a {
+  text-decoration: none;
+}
+
+.container{
+  max-width: 1170px;
+  margin: 0 auto;
+}
+
+.flex{
+  display: flex;
+  flex-wrap: wrap;
+}
+
+@keyframes show-down {
+  from {
+    opacity: 0;
+    transform: translate3d(0, 30px, 0);
+  }
+  to {
+    opacity: 1;
+    transform: translate3d(0, 0, 0);
+  }
+}
+
+main{
+  animation: show-down .8s forwards;
+}
+
+h1.title{
+  display: block;
+  width: 100%;
+  text-align: center;
+  font-size: 2.6em;
+  text-transform: uppercase;
+  margin-bottom: 20px;
+}
+
+.buscarChar{
+  padding: 0px 10px;
+  .inputBuscar{
+    background: #222;
+    padding: 10px 10px 13px;
+    overflow: hidden;
+    margin-bottom: 10px;
+    border-radius: 2px;
+
+    span{
+      color: #fff;
+      text-align: center;
+      display: block;
+      font-size: 1.5em;
+      text-transform: uppercase;
+      cursor: pointer;
+      svg{
+        width: 30px;
+        height: 30px;
+        position: relative;
+        top: 7px;
+        margin-left: 6px;
+      }
+    }
+    .box-input{
+      display: block;
+      overflow: hidden;
+      height: 0px;
+      transition: ease 0.3s;
+      input{
+        border-radius: 5px;
+        border: 1px solid #222;
+        height: 40px;
+        padding: 0px 10px;
+        font-size: 16px;
+        display: block;
+        width: 325px;
+        margin: 15px auto 0;
+      }
+      &.ativo{
+        height: 55px;
+      }
+    }
+  }
+}
+
+.mudarPagina{
+  justify-content: space-between;
+  padding: 0px 10px;
+  margin: 25px 0px 15px;
+  a{
+    height: 45px;
+    padding: 7px 25px 0px;
+    background: #fff;
+    color: #222;
+    font-size: 24px;
+    border: 1px solid #222;
+    border-radius: 5px;
+    transition: ease 0.3s;
+    cursor: pointer;
+    i{
+      font-style: normal;
+      text-decoration: none;
+    }
+    &:hover{
+      background: #222;
+      color: #fff;
+    }
+  }
+}
+
 /* You can add global styles to this file, and also import other style files */

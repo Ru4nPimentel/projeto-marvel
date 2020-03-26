@@ -1,0 +1,15 @@
+<div class="item-hqs">
+  <div class="photo-hqs">
+    <img [src]="url+'.'+imgExt" [alt]="title">
+  </div>
+  <div class="description">
+    <h2>{{title}}</h2>
+    <div class="description-hqs" #hqsDescription>
+      <p>{{description || 'Without description'}}</p>
+    </div>
+    <div class="nav-hqs">
+      <a (click)="clickDescription()">Descrição</a>
+      <a [href]="saibaMais" target="_blank">Saiba Mais</a>
+    </div>
+  </div>
+</div>

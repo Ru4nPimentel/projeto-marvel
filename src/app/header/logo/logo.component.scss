@@ -1,0 +1,84 @@
+@keyframes logoAnimation{
+  from{
+    opacity: 0;
+    left: -50px;
+  }to{
+    opacity: 1;
+    left: 0px;
+
+  }
+}
+
+@keyframes lineAnimation{
+  from{
+    width: 0px;
+  }to{
+    width: 100%;
+  }
+}
+
+a#logo{
+  font-family: 'Nunito', sans-serif;
+  height: 52px;
+  display: flex;
+  align-items: center;
+  svg{
+    width: 130px;
+    height: 52px;
+    position: relative;
+    z-index: 1;
+    transition: 0.3s ease;
+    cursor: pointer;
+    &:hover{
+      filter: grayscale(1);
+    }
+  }
+  span{
+    color: #fff;
+    font-size: 30px;
+    opacity: 0;
+    text-transform: uppercase;
+    letter-spacing: -1px;
+    font-weight: 500;
+    height: 52px;
+    padding-left: 5px;
+    padding-right: 7px;
+    line-height: 55px;
+    position: relative;
+    animation: logoAnimation 0.6s ease forwards 0.3s;
+    &::before{
+      content: "";
+      height: 1px;
+      background-color: #fff;
+      position: absolute;
+      width: 0px;
+      left: 0px;
+      margin-left: 3px;
+      animation: lineAnimation 0.6s ease forwards 0.9s;
+    }
+    &::after{
+      content: "";
+      height: 1px;
+      background-color: #fff;
+      position: absolute;
+      bottom: 0px;
+      margin-right: -3px;
+      right: 0px;
+      width: 0px;
+      animation: lineAnimation 0.6s ease forwards 0.9s;
+    }
+
+  }
+}
+
+
+@media only screen and (max-width: 768px) {
+  a#logo{
+    justify-content: center;
+    text-align: center;
+    span{
+      font-size: 20px;
+      width: 138px;
+    }
+  }
+}

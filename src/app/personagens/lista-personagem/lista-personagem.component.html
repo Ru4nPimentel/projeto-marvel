@@ -1,0 +1,14 @@
+<div class="item-hero">
+  <div class="photo-hero">
+    <img [src]="url+'.'+imgExt" [alt]="name">
+  </div>
+  <div class="description">
+    <h2>{{name}}</h2>
+    <div class="description-person" #heroDescription>
+      <p>{{description || 'Without description'}}</p>
+    </div>
+    <div class="nav-hero">
+      <a (click)="clickDescription()">Descrição</a>
+    </div>
+  </div>
+</div>
